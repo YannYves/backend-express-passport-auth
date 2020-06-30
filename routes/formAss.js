@@ -2,9 +2,9 @@ const express = require("express");
 const connection = require("../connection");
 const router = express.Router();
 
-// GET tous les users
-router.get("/users", (req, res) => {
-  connection.query(" SELECT * FROM users", (err, results) => {
+// GET tous les form_assurance
+router.get("/all", (req, res) => {
+  connection.query(" SELECT * FROM form_assurance", (err, results) => {
     if (err) {
       res.status(500).send("Erreur lors de la récupération des données" + err);
     } else {
@@ -12,3 +12,5 @@ router.get("/users", (req, res) => {
     }
   });
 });
+
+module.exports = router;

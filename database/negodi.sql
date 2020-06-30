@@ -101,11 +101,11 @@ user--------
 
 INSERT into users
 values
-  (0, 'Maurice', 'Brassart', 'maurice@example.com' , 'xe58bB'),
-  (0, 'Thomas', 'Dupont', 'yhomas@example.com' , 'fgT88o'),
-  (0, 'Isabelle', 'Leclerc', 'isabelle@example.com', 'tVb011'),
-  (0, 'Suzy', 'Dutilleux', 'suzy@example.com', 'Fgkkl7'),
-  (0, 'Sebastien', 'Machin', 'sebastien@example.com', 'Vwer880');
+  (0, FALSE, 'Maurice', 'Brassart', 'maurice@example.com' , 'xe58bB'),
+  (0, FALSE, 'Thomas', 'Dupont', 'yhomas@example.com' , 'fgT88o'),
+  (0, FALSE, 'Isabelle', 'Leclerc', 'isabelle@example.com', 'tVb011'),
+  (0, FALSE, 'Suzy', 'Dutilleux', 'suzy@example.com', 'Fgkkl7'),
+  (0, FALSE, 'Sebastien', 'Machin', 'sebastien@example.com', 'Vwer880');
 
 
 partners--------

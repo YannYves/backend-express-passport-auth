@@ -17,9 +17,10 @@ app.get("/", (request, response) => {
   response.send("Hello");
 });
 
-app.use("/assurance", require("./routes/formAssurance"));
-
-app.use("/banque", require("./routes/formBanque"));
+app.use("/users", require("./routes/users"));
+app.use("/partners", require("./routes/partners"));
+app.use("/formsBanks", require("./routes/formBanks"));
+app.use("/formsAss", require("./routes/formAss"));
 
 app.listen(port, (err) => {
   if (err) {
