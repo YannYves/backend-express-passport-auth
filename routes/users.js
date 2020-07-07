@@ -5,7 +5,7 @@ const router = express.Router();
 // GET tous les users
 router.get("/all", (req, res) => {
   connection.query(
-    " SELECT lastName firstName e-mail FROM users",
+    " SELECT firstName, lastName, email FROM users",
     (err, results) => {
       if (err) {
         res

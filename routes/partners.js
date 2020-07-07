@@ -5,7 +5,7 @@ const router = express.Router();
 // GET tous les partners
 router.get("/all", (req, res) => {
   connection.query(
-    " SELECT name isBanque isAssurance FROM partners",
+    " SELECT name, isBanque, isAssurance FROM partners",
     (err, results) => {
       if (err) {
         res

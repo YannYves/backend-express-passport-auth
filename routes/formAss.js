@@ -5,7 +5,7 @@ const router = express.Router();
 // GET tous les form_assurance
 router.get("/all", (req, res) => {
   connection.query(
-    " SELECT patners_a patners_b FROM form_assurance",
+    " SELECT partners_a , partners_b FROM form_assurance",
     (err, results) => {
       if (err) {
         res

@@ -11,14 +11,14 @@ CREATE TABLE `users`
 (250) NOT NULL,
   `firstName` varchar
 (250) NOT NULL,
-  `e-mail` varchar
+  `email` varchar
 (250) NOT NULL,
   `pwd` varchar
 (250) NOT NULL,
   PRIMARY KEY
 (`id`),
-  UNIQUE KEY `e-mail_UNIQUE`
-(`e-mail`)
+  UNIQUE KEY `email_UNIQUE`
+(`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
@@ -28,7 +28,7 @@ CREATE TABLE `users`
 CREATE TABLE `form_assurance`
 (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `parrtners_a` varchar
+  `partners_a` varchar
 (45) NOT NULL,
   `partners_b` varchar
 (45) NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE `form_assurance_partners`
 CREATE TABLE `form_banque`
 (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `patners_a` varchar
+  `partners_a` varchar
 (45) NOT NULL,
   `partners_b` varchar
 (45) NOT NULL,
