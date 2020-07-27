@@ -192,6 +192,19 @@ CREATE TABLE `form`
 
 
 
+---CONTACT --- 
+CREATE TABLE `contact` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(250) NOT NULL,
+  `lastName` varchar(250) NOT NULL,
+  `mail` varchar(250) NOT NULL,
+  `message` varchar(500) NOT NULL,
+  `timeStamp` datetime NOT NULL,
+  `read` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
 
 
 
