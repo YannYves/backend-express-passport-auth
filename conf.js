@@ -17,6 +17,6 @@ const db = mysql.createPool({
 });
 
 module.exports = {
-  backendPort: process.env.BACKEND_PORT || "4242",
+  backendPort: process.env.BACKEND_PORT,
   db,
 };

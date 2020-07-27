@@ -6,6 +6,22 @@ const { db } = require("../conf");
 
 // -----------------------------------auth wall
 
+router.get("/all", (req, res) => {
+  db.query("SELECT * FROM form", (err, results, fields) => {
+    if (err) {
+      res.status(500).send("Nope, cassé un truc!");
+      console.log(err.sql);
+      console.log(err.message);
+      return;
+    }
+    if (results.length === 0) {
+      res.status(400).send("J'ai rien trouvé!");
+      return;
+    }
+    res.send(results);
+  });
+});
+
 router.get("/:id", (req, res) => {
   const id = req.params.id;
 
@@ -21,12 +37,14 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const save = req.body.save;
-  db.query("INSERT INTO form SET ?;", [save], (errReq, resReq) => {
-    if (errReq) {
-      res.status(500).send(errReq);
+  db.query("INSERT INTO form SET ?", [req.body], (err, results) => {
+    if (err) {
+      res.status(500).send("Nope, cassé un truc!");
+      console.log(err.sql);
+      console.log(err.message);
+      return;
     }
-    res.status(200).send("Form successfully saved!");
+    res.send(results);
   });
 });
 
@@ -39,6 +57,20 @@ router.put("/:id", (req, res) => {
       console.log(err.message);
       return;
     }
+    res.send(results);
+  });
+});
+
+router.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  db.query("DELETE FROM form WHERE id=?", [id], (err, results) => {
+    if (err) {
+      res.status(500).send("Nope, cassé un truc!");
+      console.log(err.sql);
+      console.log(err.message);
+      return;
+    }
+
     res.send(results);
   });
 });
