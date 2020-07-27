@@ -2,25 +2,16 @@
 
 ----USER------
 
-CREATE TABLE users
-(
+CREATE TABLE `user` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `isAdmin` tinyint
-(1) NOT NULL,
-  `lastName` varchar
-(250) NOT NULL,
-  `firstName` varchar
-(250) NOT NULL,
-  `email` varchar
-(250) NOT NULL,
-  `pwd` varchar
-(250) NOT NULL,
-  PRIMARY KEY
-(`id`),
-  UNIQUE KEY `email_UNIQUE`
-(`email`)
-);
-
+  `isAdmin` tinyint(1) NOT NULL DEFAULT 0,
+  `lastName` varchar(250) NOT NULL,
+  `firstName` varchar(250) NOT NULL,
+  `mail` varchar(250) NOT NULL,
+  `pass` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `e-mail_UNIQUE` (`mail`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 
 ---- FORM  ------
@@ -195,17 +186,46 @@ CREATE TABLE `form`
 
 
 
---------------- QUERY -----------------
+  --------------- SAMPLE QUERY -----------------WARNING : FOR TESTING PURPOSE OONLY 
 
-smaple user--------
 
-INSERT into users
-values
-  (0, FALSE, 'Maurice', 'Brassart', 'maurice@example.com' , 'xe58bB'),
-  (0, FALSE, 'Thomas', 'Dupont', 'yhomas@example.com' , 'fgT88o'),
-  (0, FALSE, 'Isabelle', 'Leclerc', 'isabelle@example.com', 'tVb011'),
-  (0, FALSE, 'Suzy', 'Dutilleux', 'suzy@example.com', 'Fgkkl7'),
-  (0, FALSE, 'Sebastien', 'Machin', 'sebastien@example.com', 'Vwer880');
+smaple user-------- WARNING : FOR TESTING PURPOSE OONLY 
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `isAdmin` tinyint(1) NOT NULL DEFAULT 0,
+  `lastName` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `firstName` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `mail` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `pass` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `e-mail_UNIQUE` (`mail`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (1, 0, 'McKenzie', 'Stevie', 'olson.roscoe@example.com', 'e');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (2, 0, 'Kuhlman', 'Tyrel', 'arvid.mohr@example.net', 'g');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (3, 1, 'Spencer', 'Harvey', 'emilie54@example.com', 'x');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (4, 0, 'Kuhic', 'Devon', 'torp.rahsaan@example.net', 'x');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (5, 0, 'Lemke', 'Tyreek', 'emmitt.keebler@example.com', 'p');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (6, 0, 'Schoen', 'Cody', 'danielle.funk@example.com', 'q');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (7, 0, 'Hansen', 'Leopoldo', 'jimmy25@example.net', 'm');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (8, 0, 'Hand', 'Blaze', 'june45@example.org', 'a');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (9, 0, 'Johnson', 'Elbert', 'ozella83@example.net', 'g');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (10, 0, 'Stroman', 'Benedict', 'dmccullough@example.net', 'w');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (11, 0, 'Murazik', 'Roger', 'amir80@example.org', 't');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (12, 0, 'Wehner', 'Nat', 'kiana.gerlach@example.com', 'm');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (13, 0, 'Zulauf', 'Jadon', 'lullrich@example.net', 'p');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (14, 0, 'Johnson', 'Dallin', 'nboyer@example.org', 'n');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (15, 0, 'Walker', 'Victor', 'schmeler.madie@example.net', 'a');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (16, 0, 'Dach', 'Tyler', 'margarita.ortiz@example.net', 'u');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (17, 0, 'Schumm', 'Berry', 'candido.jacobi@example.com', 'j');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (18, 0, 'Dare', 'Hillard', 'maud.price@example.com', 'e');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (19, 0, 'Reynolds', 'Oren', 'rjacobson@example.net', 'o');
+INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (20, 0, 'Monahan', 'Efrain', 'garrick.koch@example.net', 'z');
+
+
 
 
 smaple form-------- WARNING : FOR TESTING PURPOSE OONLY 
@@ -400,6 +420,8 @@ INSERT INTO `form` (`id`, `question1`, `question2`, `question3`, `question4`, `q
 INSERT INTO `form` (`id`, `question1`, `question2`, `question3`, `question4`, `question4a`, `question5`, `question5a`, `question5b`, `question5bis`, `question5bisa`, `question5bisb`, `question6`, `question7`, `question7a`, `question7b`, `question8`, `question8a`, `question9`, `question10`, `question10a`, `question10b`, `question11`, `question12`, `question14`, `question15`, `question16`, `question16a`, `question16b`, `question17`, `question18`, `question18a`, `question19a`, `question19a1`, `question19b`, `question20a`, `question20b`, `question20c`, `question20d`, `question21`, `question21a`, `question22`, `question22a`, `question22b`, `question22c`, `question23a`, `question23b`, `question24`, `question25`, `question26`, `question27`, `question27b1`, `question28`, `question28a`, `question29`, `question30`, `question31a`, `question31b`, `question31c`, `question31d`, `question32`, `question33`, `question34`, `question35`, `question36`, `question37`, `question38a`, `question38b`, `question38bisa`, `question38bisb`, `question38bisc`, `question38c`, `question39a`, `question39b`, `question40`, `question40a`, `question41`, `question42`, `question42bis`, `question43`, `question431`, `question432`) VALUES (98, 'Nihil qui molestiae est aut velit consequuntu', 'Sed perspiciatis nam numquam nulla consequunt', 'Sapiente natus voluptatem quibusdam sit quas.', 'Et eligendi itaque omnis hic et.', '0.00', 'In totam quia vitae minima est vero.', '0.00', '0.00', 'Aut et facere eos et consequatur excepturi qu', 'Qui et et eum amet nulla.', '0.00', 'Cum recusandae aut possimus debitis.', 'Officiis quibusdam autem officia at eos ipsa ', 0, 'Sequi ut eum eveniet.', 'Placeat aut aut ad debitis aspernatur possimu', '0.00', 'Asperiores similique non nulla quis omnis.', 'Error ut sed blanditiis sit exercitationem ut', '0.00', '0.00', 'Quas ut quo sed.', 'Dolores quam accusantium est perferendis ut.', 'Aut quo in laboriosam et.', 'Ipsum voluptas blanditiis possimus sed earum ', 'Dolores autem facilis rerum sequi nostrum dol', 0, 'Numquam ut aut repellat quia voluptatem amet.', '0.00', 'Non non quis occaecati impedit pariatur aliqu', '0.00', '0.00', 'Porro sint sapiente aut quo quisquam et.', '0.00', '0.00', '0.00', '0.00', '0.00', 'Eum eius cumque omnis possimus.', '0.00', 'Natus aut sint et accusantium reiciendis.', '0.00', 0, '0.00', '0.00', '0.00', 'Architecto minima fuga repudiandae vel sit ha', 'Et delectus quasi unde repudiandae.', 'Pariatur autem repellat veritatis praesentium', 'Consequatur eum nihil facere dolor.', '0.00', 'Quis earum et at qui ut dicta omnis.', '0.00', '0.00', 'Natus explicabo ad architecto provident.', '0.00', '0.00', '0.00', '0.00', '0.00', 'Ut ut ut non.', 'Sint qui velit facere mollitia nam.', 'Soluta dolor harum numquam qui voluptatem.', 'Exercitationem sit unde voluptatem asperiores', '1996-06-14 14:24:57', 'Quia ipsam numquam quia earum et aut.', 0, 'Fuga nihil dolorem et nam.', 0, 'Sequi odio nam modi laborum occaecati suscipi', 'Qui velit voluptas aut aliquid sit.', '0.00', '0.00', 'Quas a placeat aspernatur ut expedita itaque.', 'Perferendis perspiciatis quia amet cupiditate', 'Eaque quis quidem maxime.', 'Consequuntur eius aut quia quae tempora saepe', 'Et voluptatem architecto enim dolorem id.', '0.00', '0.00', '0.00');
 INSERT INTO `form` (`id`, `question1`, `question2`, `question3`, `question4`, `question4a`, `question5`, `question5a`, `question5b`, `question5bis`, `question5bisa`, `question5bisb`, `question6`, `question7`, `question7a`, `question7b`, `question8`, `question8a`, `question9`, `question10`, `question10a`, `question10b`, `question11`, `question12`, `question14`, `question15`, `question16`, `question16a`, `question16b`, `question17`, `question18`, `question18a`, `question19a`, `question19a1`, `question19b`, `question20a`, `question20b`, `question20c`, `question20d`, `question21`, `question21a`, `question22`, `question22a`, `question22b`, `question22c`, `question23a`, `question23b`, `question24`, `question25`, `question26`, `question27`, `question27b1`, `question28`, `question28a`, `question29`, `question30`, `question31a`, `question31b`, `question31c`, `question31d`, `question32`, `question33`, `question34`, `question35`, `question36`, `question37`, `question38a`, `question38b`, `question38bisa`, `question38bisb`, `question38bisc`, `question38c`, `question39a`, `question39b`, `question40`, `question40a`, `question41`, `question42`, `question42bis`, `question43`, `question431`, `question432`) VALUES (99, 'Alias eos et distinctio et.', 'Doloremque non occaecati mollitia.', 'Quasi numquam aspernatur et sed.', 'Enim excepturi id eveniet magnam.', '0.00', 'Iusto soluta rem incidunt officia.', '0.00', '0.00', 'Atque eius accusantium dolorem et voluptas qu', 'Enim omnis maxime voluptatem fuga nulla.', '0.00', 'Magni accusamus occaecati ut a deserunt.', 'Ducimus quia ut natus velit.', 0, 'Vel aut est facilis et aliquid similique.', 'Quas eos doloremque qui architecto nobis.', '0.00', 'Voluptates minima quas et saepe ut quo.', 'Est unde eos recusandae praesentium minima.', '0.00', '0.00', 'Dolores eveniet ipsam ab quia laborum.', 'Omnis consectetur facere reprehenderit offici', 'Et esse quo ipsa illum.', 'Neque delectus culpa autem quae eum omnis ut ', 'Similique dignissimos soluta alias dolorem qu', 0, 'Doloribus et assumenda similique cupiditate s', '0.00', 'Sunt est suscipit rerum cum voluptatum nam do', '0.00', '0.00', 'Et facere placeat sit repellat ratione pariat', '0.00', '0.00', '0.00', '0.00', '0.00', 'Dicta dolorem nobis in deleniti.', '0.00', 'Aut aut optio dolor qui accusamus aut ut.', '0.00', 0, '0.00', '0.00', '0.00', 'Amet modi labore id perspiciatis qui aut occa', 'Omnis est officia soluta non.', 'Quisquam culpa blanditiis ipsa libero.', 'Qui dolorum sed consequatur.', '0.00', 'Fugit alias saepe quia unde.', '0.00', '0.00', 'Et consequatur et perferendis consequuntur ut', '0.00', '0.00', '0.00', '0.00', '0.00', 'Accusantium ex in ut voluptatem numquam volup', 'Optio aliquid est est alias.', 'Asperiores saepe perferendis molestiae nisi.', 'Possimus labore error aut id et.', '2000-10-31 09:28:04', 'Quasi quisquam doloremque ut impedit ipsum du', 0, 'Odit est vel accusantium tempore officia occa', 0, 'Aut animi voluptate rem ea necessitatibus sed', 'Voluptatem accusamus soluta et mollitia qui e', '0.00', '0.00', 'Qui ea ut in consequatur omnis aut exercitati', 'Voluptatem ullam impedit nisi voluptatem nemo', 'Dolorem similique sunt deleniti et mollitia n', 'Alias aut ad consequatur qui quibusdam rerum ', 'Quia sint nostrum eos impedit in dolor ex fug', '0.00', '0.00', '0.00');
 INSERT INTO `form` (`id`, `question1`, `question2`, `question3`, `question4`, `question4a`, `question5`, `question5a`, `question5b`, `question5bis`, `question5bisa`, `question5bisb`, `question6`, `question7`, `question7a`, `question7b`, `question8`, `question8a`, `question9`, `question10`, `question10a`, `question10b`, `question11`, `question12`, `question14`, `question15`, `question16`, `question16a`, `question16b`, `question17`, `question18`, `question18a`, `question19a`, `question19a1`, `question19b`, `question20a`, `question20b`, `question20c`, `question20d`, `question21`, `question21a`, `question22`, `question22a`, `question22b`, `question22c`, `question23a`, `question23b`, `question24`, `question25`, `question26`, `question27`, `question27b1`, `question28`, `question28a`, `question29`, `question30`, `question31a`, `question31b`, `question31c`, `question31d`, `question32`, `question33`, `question34`, `question35`, `question36`, `question37`, `question38a`, `question38b`, `question38bisa`, `question38bisb`, `question38bisc`, `question38c`, `question39a`, `question39b`, `question40`, `question40a`, `question41`, `question42`, `question42bis`, `question43`, `question431`, `question432`) VALUES (100, 'Et fugit consectetur ducimus vel voluptatum o', 'Delectus voluptatem sint non vero totam volup', 'Sed nobis nemo numquam facilis aut excepturi ', 'Nobis sit expedita nulla velit.', '0.00', 'Laudantium sapiente in qui et magni aut.', '0.00', '0.00', 'Quisquam non deserunt itaque.', 'Nesciunt laudantium sed corporis libero vitae', '0.00', 'Ut corporis consequuntur sapiente adipisci vo', 'Repellendus aut quos sed praesentium fugit.', 0, 'Deserunt molestiae perspiciatis repellendus.', 'Consequatur iure repellat eligendi ut non.', '0.00', 'Asperiores est numquam amet omnis sed.', 'Distinctio reprehenderit ab beatae eos error ', '0.00', '0.00', 'Eius quia quia nemo ad enim est dolorum.', 'Voluptatem consequuntur est temporibus distin', 'Animi quia velit voluptatem dicta quia repreh', 'Est excepturi reprehenderit et tempore iusto ', 'Ipsum rerum repudiandae sint est vero.', 0, 'Est dolor id qui.', '0.00', 'Delectus aut totam aliquam magnam.', '0.00', '0.00', 'Quos tempora aut vitae maiores tenetur vitae ', '0.00', '0.00', '0.00', '0.00', '0.00', 'Doloremque ullam error dicta nulla perspiciat', '0.00', 'Ipsum mollitia qui et laboriosam est.', '0.00', 0, '0.00', '0.00', '0.00', 'Fuga cumque rerum delectus tempore consequatu', 'Commodi quaerat ad neque.', 'Nihil aut mollitia temporibus et fugiat neque', 'Rerum cumque nobis laborum saepe.', '0.00', 'Ad quo praesentium occaecati non animi.', '0.00', '0.00', 'Temporibus iste voluptates sed voluptas provi', '0.00', '0.00', '0.00', '0.00', '0.00', 'Aliquam aliquid rerum ab dolorem vel.', 'Consequuntur aliquam nobis minima omnis.', 'Debitis et aspernatur nihil.', 'Amet consequatur pariatur eum voluptatibus se', '1971-08-24 19:22:53', 'Ab architecto similique non qui pariatur tene', 0, 'Et accusamus in consequatur quis perferendis ', 0, 'Beatae fugiat sed quis cumque tempora.', 'Qui quaerat dolorem consectetur quibusdam.', '0.00', '0.00', 'Nobis reiciendis fugiat quibusdam delectus co', 'Repellat fuga quo quae ad accusantium sed acc', 'Maxime voluptatem eveniet consectetur eos mol', 'Et quas error in exercitationem eos consectet', 'Eum hic aut amet.', '0.00', '0.00', '0.00');
+
+
 
 
 
