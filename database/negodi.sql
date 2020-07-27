@@ -197,7 +197,7 @@ CREATE TABLE `form`
 
 --------------- QUERY -----------------
 
-smaple user--------
+--sample user--------
 
 INSERT into users
 values
@@ -208,7 +208,7 @@ values
   (0, FALSE, 'Sebastien', 'Machin', 'sebastien@example.com', 'Vwer880');
 
 
-smaple form-------- WARNING : FOR TESTING PURPOSE OONLY 
+--sample form-------- WARNING : FOR TESTING PURPOSE OONLY 
 
 
 DROP TABLE IF EXISTS `form`;

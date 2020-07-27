@@ -9,13 +9,13 @@ const { db } = require("../conf");
 router.get("/all", (req, res) => {
   db.query("SELECT * FROM form", (err, results, fields) => {
     if (err) {
-      res.status(500).send("Nope, cassé un truc!");
+      res.status(500).send("there was an error while processing your query");
       console.log(err.sql);
       console.log(err.message);
       return;
     }
     if (results.length === 0) {
-      res.status(400).send("J'ai rien trouvé!");
+      res.status(400).send("form not found");
       return;
     }
     res.send(results);
@@ -30,7 +30,7 @@ router.get("/:id", (req, res) => {
       res.status(500).send(errReq);
     }
     if (!resReq.length) {
-      res.status(404).send("Form not found");
+      res.status(404).send("form not found");
     }
     res.status(200).send(resReq[0]);
   });
@@ -39,7 +39,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   db.query("INSERT INTO form SET ?", [req.body], (err, results) => {
     if (err) {
-      res.status(500).send("Nope, cassé un truc!");
+      res.status(500).send("there was an error while processing your query");
       console.log(err.sql);
       console.log(err.message);
       return;
@@ -52,7 +52,7 @@ router.put("/:id", (req, res) => {
   const id = req.params.id;
   db.query("UPDATE form SET ? WHERE id=?", [req.body, id], (err, results) => {
     if (err) {
-      res.status(500).send("Nope, cassé un truc!");
+      res.status(500).send("there was an error while processing your query");
       console.log(err.sql);
       console.log(err.message);
       return;
@@ -65,7 +65,7 @@ router.delete("/:id", (req, res) => {
   const id = req.params.id;
   db.query("DELETE FROM form WHERE id=?", [id], (err, results) => {
     if (err) {
-      res.status(500).send("Nope, cassé un truc!");
+      res.status(500).send("there was an error while processing your query");
       console.log(err.sql);
       console.log(err.message);
       return;
