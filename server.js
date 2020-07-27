@@ -8,6 +8,7 @@ app.use(express.json());
 
 app.use("/form", require("./routes/form.js"));
 app.use("/auth", require("./routes/auth"));
+app.use("/contact", require("./routes/contact"));
 
 app.use("/", (req, res) => {
   res.send("Welcome, stranger!");

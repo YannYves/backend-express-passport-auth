@@ -16,171 +16,92 @@ CREATE TABLE `user` (
 
 ---- FORM  ------
 
-CREATE TABLE `form`
-(
+CREATE TABLE `form` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `question1` varchar
-(45) NOT NULL,
-  `question2` varchar
-(45) NOT NULL,
-  `question3` varchar
-(45) NOT NULL,
-  `question4` varchar
-(45) NOT NULL,
-  `question4a` decimal
-(8,2) NOT NULL,
-  `question5` varchar
-(45) NOT NULL,
-  `question5a` decimal
-(8,2) NOT NULL,
-  `question5b` decimal
-(8,2) NOT NULL,
-  `question5bis` varchar
-(45) NOT NULL,
-  `question5bisa` varchar
-(45) NOT NULL,
-  `question5bisb` decimal
-(8,2) NOT NULL,
-  `question6` varchar
-(45) NOT NULL,
-  `question7` varchar
-(45) NOT NULL,
-  `question7a` int NOT NULL,
-  `question7b` varchar
-(45) NOT NULL,
-  `question8` varchar
-(45) NOT NULL,
-  `question8a` decimal
-(6,2) NOT NULL,
-  `question9` varchar
-(45) NOT NULL,
-  `question10` varchar
-(45) NOT NULL,
-  `question10a` decimal
-(8,2) NOT NULL,
-  `question10b` decimal
-(8,2) NOT NULL,
-  `question11` varchar
-(45) NOT NULL,
-  `question12` varchar
-(45) NOT NULL,
-  `question14` varchar
-(45) NOT NULL,
-  `question15` varchar
-(45) NOT NULL,
-  `question16` varchar
-(45) NOT NULL,
-  `question16a` int NOT NULL,
-  `question16b` varchar
-(45) NOT NULL,
-  `question17` decimal
-(8,2) NOT NULL,
-  `question18` varchar
-(45) NOT NULL,
-  `question18a` decimal
-(8,2) NOT NULL,
-  `question19a` decimal
-(8,2) NOT NULL,
-  `question19a1` varchar
-(45) NOT NULL,
-  `question19b` decimal
-(8,2) NOT NULL,
-  `question20a` decimal
-(8,2) NOT NULL,
-  `question20b` decimal
-(8,2) NOT NULL,
-  `question20c` decimal
-(8,2) NOT NULL,
-  `question20d` decimal
-(8,2) NOT NULL,
-  `question21` varchar
-(45) NOT NULL,
-  `question21a` decimal
-(8,2) NOT NULL,
-  `question22` varchar
-(45) NOT NULL,
-  `question22a` decimal
-(8,2) NOT NULL,
-  `question22b` int NOT NULL,
-  `question22c` decimal
-(8,2) NOT NULL,
-  `question23a` decimal
-(8,2) NOT NULL,
-  `question23b` decimal
-(8,2) NOT NULL,
-  `question24` varchar
-(45) NOT NULL,
-  `question25` varchar
-(45) NOT NULL,
-  `question26` varchar
-(45) NOT NULL,
-  `question27` varchar
-(45) NOT NULL,
-  `question27b1` decimal
-(8,2) NOT NULL,
-  `question28` varchar
-(45) NOT NULL,
-  `question28a` decimal
-(8,2) NOT NULL,
-  `question29` decimal
-(8,2) NOT NULL,
-  `question30` varchar
-(45) NOT NULL,
-  `question31a` decimal
-(8,2) NOT NULL,
-  `question31b` decimal
-(8,2) NOT NULL,
-  `question31c` decimal
-(8,2) NOT NULL,
-  `question31d` decimal
-(8,2) NOT NULL,
-  `question32` decimal
-(8,2) NOT NULL,
-  `question33` varchar
-(45) NOT NULL,
-  `question34` varchar
-(45) NOT NULL,
-  `question35` varchar
-(45) NOT NULL,
-  `question36` varchar
-(45) NOT NULL,
-  `question37` datetime NOT NULL,
-  `question38a` varchar
-(45) NOT NULL,
-  `question38b` int NOT NULL,
-  `question38bisa` varchar
-(45) NOT NULL,
-  `question38bisb` int NOT NULL,
-  `question38bisc` varchar
-(45) NOT NULL,
-  `question38c` varchar
-(45) NOT NULL,
-  `question39a` decimal
-(8,2) NOT NULL,
-  `question39b` decimal
-(8,2) NOT NULL,
-  `question40` varchar
-(45) NOT NULL,
-  `question40a` varchar
-(45) NOT NULL,
-  `question41` varchar
-(45) NOT NULL,
-  `question42` varchar
-(45) NOT NULL,
-  `question42bis` varchar
-(45) NOT NULL,
-  `question43` decimal
-(8,2) NOT NULL,
-  `question431` decimal
-(8,2) NOT NULL,
-  `question432` decimal
-(8,2) NOT NULL,
-  PRIMARY KEY
-(`id`),
-  UNIQUE KEY `id_UNIQUE`
-(`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
-
+  `question1` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question2` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question3` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question4` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question4a` decimal(8,2) DEFAULT NULL,
+  `question5` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question5a` decimal(8,2) DEFAULT NULL,
+  `question5b` decimal(8,2) DEFAULT NULL,
+  `question5bis` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question5bisa` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question5bisb` decimal(8,2) DEFAULT NULL,
+  `question6` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question7` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question7a` int DEFAULT NULL,
+  `question7b` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question8` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question8a` decimal(6,2) DEFAULT NULL,
+  `question9` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question10` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question10a` decimal(8,2) DEFAULT NULL,
+  `question10b` decimal(8,2) DEFAULT NULL,
+  `question11` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question12` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question14` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question15` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question16` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question16a` int DEFAULT NULL,
+  `question16b` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question17` decimal(8,2) DEFAULT NULL,
+  `question18` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question18a` decimal(8,2) DEFAULT NULL,
+  `question19a` decimal(8,2) DEFAULT NULL,
+  `question19a1` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question19b` decimal(8,2) DEFAULT NULL,
+  `question20a` decimal(8,2) DEFAULT NULL,
+  `question20b` decimal(8,2) DEFAULT NULL,
+  `question20c` decimal(8,2) DEFAULT NULL,
+  `question20d` decimal(8,2) DEFAULT NULL,
+  `question21` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question21a` decimal(8,2) DEFAULT NULL,
+  `question22` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question22a` decimal(8,2) DEFAULT NULL,
+  `question22b` int DEFAULT NULL,
+  `question22c` decimal(8,2) DEFAULT NULL,
+  `question23a` decimal(8,2) DEFAULT NULL,
+  `question23b` decimal(8,2) DEFAULT NULL,
+  `question24` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question25` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question26` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question27` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question27b1` decimal(8,2) DEFAULT NULL,
+  `question28` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question28a` decimal(8,2) DEFAULT NULL,
+  `question29` decimal(8,2) DEFAULT NULL,
+  `question30` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question31a` decimal(8,2) DEFAULT NULL,
+  `question31b` decimal(8,2) DEFAULT NULL,
+  `question31c` decimal(8,2) DEFAULT NULL,
+  `question31d` decimal(8,2) DEFAULT NULL,
+  `question32` decimal(8,2) DEFAULT NULL,
+  `question33` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question34` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question35` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question36` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question37` datetime DEFAULT NULL,
+  `question38a` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question38b` int DEFAULT NULL,
+  `question38bisa` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question38bisb` int DEFAULT NULL,
+  `question38bisc` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question38c` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question39a` decimal(8,2) DEFAULT NULL,
+  `question39b` decimal(8,2) DEFAULT NULL,
+  `question40` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question40a` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question41` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question42` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question42bis` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question43` decimal(8,2) DEFAULT NULL,
+  `question431` decimal(8,2) DEFAULT NULL,
+  `question432` decimal(8,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 
 
 

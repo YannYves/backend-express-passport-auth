@@ -4,6 +4,8 @@ const { Strategy } = require("passport");
 const localStrategy = require("passport-local").Strategy;
 const JwtStrategy = require("passport-jwt").Strategy,
   ExtractJwt = require("passport-jwt").ExtractJwt;
+require("dotenv").config();
+const { DB_SECRET } = process.env;
 
 const { db } = require("./conf");
 
@@ -45,7 +47,7 @@ passport.use(
 
 const opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = "secret";
+opts.secretOrKey = DB_SECRET;
 
 passport.use(
   new JwtStrategy(opts, function (jwt_payload, done) {

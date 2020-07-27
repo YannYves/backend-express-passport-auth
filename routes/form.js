@@ -6,7 +6,7 @@ const passport = require("passport");
 router.post("/", (req, res) => {
   db.query("INSERT INTO form SET ?", [req.body], (err, results) => {
     if (err) {
-      res.status(500).send("Nope, cassé un truc!");
+      res.status(500).send("there was an error while processing your query");
       console.log(err.sql);
       console.log(err.message);
       return;
@@ -39,7 +39,7 @@ router.use((req, res, next) => {
 router.get("/all", (req, res) => {
   db.query("SELECT * FROM form", (err, results, fields) => {
     if (err) {
-      res.status(500).send("Nope, cassé un truc!");
+      res.status(500).send("there was an error while processing your query");
       console.log(err.sql);
       console.log(err.message);
       return;
@@ -54,7 +54,6 @@ router.get("/all", (req, res) => {
 
 router.get("/:id", (req, res) => {
   const id = req.params.id;
-
   db.query("SELECT * FROM form WHERE id=? LIMIT 1;", [id], (errReq, resReq) => {
     if (errReq) {
       res.status(500).send(errReq);
@@ -70,7 +69,7 @@ router.put("/:id", (req, res) => {
   const id = req.params.id;
   db.query("UPDATE form SET ? WHERE id=?", [req.body, id], (err, results) => {
     if (err) {
-      res.status(500).send("Nope, cassé un truc!");
+      res.status(500).send("there was an error while processing your query");
       console.log(err.sql);
       console.log(err.message);
       return;
