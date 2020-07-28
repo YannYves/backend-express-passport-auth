@@ -2,10 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { db } = require("../conf");
 
-// -----------------------------------auth wall
-
-// -----------------------------------auth wall
-
 router.get("/all", (req, res) => {
   db.query("SELECT * FROM form", (err, results, fields) => {
     if (err) {
