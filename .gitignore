@@ -1,5 +1,4 @@
-test_integration
+
 node_modules/
 package-lock.json
 .env
-database

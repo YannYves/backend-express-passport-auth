@@ -106,6 +106,19 @@ CREATE TABLE `form` (
 
 
 
+---CONTACT --- 
+CREATE TABLE `contact` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(250) NOT NULL,
+  `lastName` varchar(250) NOT NULL,
+  `mail` varchar(250) NOT NULL,
+  `message` varchar(500) NOT NULL,
+  `timeStamp` datetime NOT NULL,
+  `read` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=uté8mb4_0900_ai_ci
+
 
   --------------- SAMPLE QUERY -----------------WARNING : FOR TESTING PURPOSE OONLY 
 
@@ -146,10 +159,11 @@ INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VA
 INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (19, 0, 'Reynolds', 'Oren', 'rjacobson@example.net', 'o');
 INSERT INTO `user` (`id`, `isAdmin`, `lastName`, `firstName`, `mail`, `pass`) VALUES (20, 0, 'Monahan', 'Efrain', 'garrick.koch@example.net', 'z');
 
+--sample user--------
 
 
 
-smaple form-------- WARNING : FOR TESTING PURPOSE OONLY 
+--sample form-------- WARNING : FOR TESTING PURPOSE OONLY 
 
 
 DROP TABLE IF EXISTS `form`;
