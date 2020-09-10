@@ -65,18 +65,6 @@ router.get("/:id", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
-  db.query("INSERT INTO form SET ?", [req.body], (err, results) => {
-    if (err) {
-      res.status(500).send("there was an error while processing your query");
-      console.log(err.sql);
-      console.log(err.message);
-      return;
-    }
-    res.send(results);
-  });
-});
-
 router.put("/:id", (req, res) => {
   const id = req.params.id;
   db.query("UPDATE form SET ? WHERE id=?", [req.body, id], (err, results) => {

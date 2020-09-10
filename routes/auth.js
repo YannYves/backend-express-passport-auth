@@ -7,8 +7,6 @@ const passport = require("passport");
 require("../passport-strategies");
 
 router.post("/signup", (req, res) => {
-  // data from post request+ + encryption
-
   req.body.pass = bcrypt.hashSync(req.body.pass, 5);
   db.query("INSERT INTO user SET ?", [req.body], (errReq, resReq) => {
     if (errReq) {
